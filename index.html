@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>The Psychic Game</title>
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div id="game">
+                <h1>The Psychic Game</h1>
+                <hr>
+                <p>Guess what letter I am thinking of!</p>
+                <hr>
+                <p>Wins:</p>
+                <p>Losses:</p>
+                <p>Guesses Left:</p>
+                <p>Your Guesses So Far:</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    1. beginning of game: W-L-G = 0-0-9
+            2. user clicks a letter on keyboard.
+            3. (incorrect guess) / log keystroke and decrease "Guesses" by 1.
+            4. after 9/ if no correct guesses, then increase "Losses" by 1, and log "guesses" as zero and reset the game (Guesses Left: 9).
+            5. computer needs to pick a new letter.
+            6. (correct guess) / erase keystrokes and increase "Wins" by 1, and log "guesses" as nine, and reset
+            the game (Guesses Left:9).
+ -->
+
+    <script type="text/javascript">
+
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+        var wins = 0;
+        var losses = 0;
+        var left = 9;
+        var guesses = [];
+
+        document.onkeyup = function (event) {
+
+            var userGuess = event.key;
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+
+            if (options.indexOf(userGuess) > -1) {
+                if (userGuess === computerGuess) {
+                    wins++;
+                    left = 9;
+                    guesses = [];
+                }
+                if (userGuess != computerGuess) {
+                    left--;
+                    guesses.push(userGuess);
+                }
+                if (left === 0) {
+                    left = 9;
+                    losses++;
+                    guesses = [];
+                }
+                var html =
+                    "<h1> The Psychic Game </h1>" +
+                    "<hr>" +
+                    "<p>Guess what letter I am thinking of!</p>" +
+                    "<hr>" +
+                    "<p>Wins: " + wins + "</p>" +
+                    "<p>Losses: " + losses + "</p>" +
+                    "<p>Guesses Left: " + left + "</p>" +
+                    "<p>Your Guesses so far: " + guesses.join(", ") + "</p>" +
+                    "<hr>";
+                document.querySelector("#game").innerHTML = html;
+            }
+        };
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
