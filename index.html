@@ -68,6 +68,7 @@
                     losses++;
                     guesses = [];
                 }
+
                 var html =
                     "<h1> The Psychic Game </h1>" +
                     "<hr>" +
@@ -78,6 +79,7 @@
                     "<p>Guesses Left: " + left + "</p>" +
                     "<p>Your Guesses so far: " + guesses.join(", ") + "</p>" +
                     "<hr>";
+                    
                 document.querySelector("#game").innerHTML = html;
             }
         };
