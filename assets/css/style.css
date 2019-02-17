@@ -1,0 +1,21 @@
+.card {
+    background-image: url(../images/whirlpool.png)
+}
+
+.container {
+    padding-bottom: 14px;
+    padding-top: 14px;
+    color: white;
+    background-image: url(../images/ep_naturalblack.png)
+    
+}
+
+button {
+    background-color: lightskyblue;
+}
+
+#poster {
+    float: right;
+    margin-right: 40%;
+    border: 2px solid #666666;
+}

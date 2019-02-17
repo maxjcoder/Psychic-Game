@@ -8,50 +8,69 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../Psychic-Game/assets/css/style.css">
     <title>The Psychic Game</title>
 </head>
 
 <body>
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <div id="game">
-                <h1>The Psychic Game</h1>
-                <hr>
-                <p>Guess what letter I am thinking of!</p>
-                <hr>
-                <p>Wins:</p>
-                <p>Losses:</p>
-                <p>Guesses Left:</p>
-                <p>Your Guesses So Far:</p>
-                <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="container2">
+                    <div id="poster">
+                        <img src="assets/images/zoltar.3.jpeg">
+                    </div>
+                </div>
             </div>
-            <div>
-                <button onclick="location.reload();">Refresh Page</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <div id="game">
+                        <h1>The Psychic Game</h1>
+                        <hr class="line">
+                        <p>Guess what letter I am thinking of!</p>
+                        <hr class="line">
+                        <p>Wins:</p>
+                        <p>Losses:</p>
+                        <p>Guesses Left:</p>
+                        <p>Your Guesses So Far:</p>
+                        <hr class="line">
+                    </div>
+                    <div>
+                        <button onclick="location.reload();">Refresh Page</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Visit my portfolio</h5>
-              <p class="card-text">My name is Max Jackson and I am a web developer in the making</p>
-              <a href="https://maxjcoder.github.io/Basic-Portfolio/"  title="Max Jackson's Web Dev. Portfolio" target="_blank" class="btn btn-primary">Portfolio</a>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Visit my portfolio</h5>
+                    <p class="card-text">My name is Max Jackson and I am a web developer in the making</p>
+                    <a href="https://maxjcoder.github.io/Basic-Portfolio/" title="Max Jackson's Web Dev. Portfolio"
+                        target="_blank" class="btn btn-primary">Portfolio</a>
+                </div>
             </div>
-          </div>
         </div>
         <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Would you like to play a different game?</h5>
-              <p class="card-text">You might enjoy Rock, Paper, Scissors...</p>
-              <a href="https://maxjcoder.github.io/Rock-Paper-Scissors/" class="btn btn-primary">Play RPS Now!</a>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Would you like to play a different game?</h5>
+                    <p class="card-text">You might enjoy Rock, Paper, Scissors...</p>
+                    <a href="https://maxjcoder.github.io/Rock-Paper-Scissors/" class="btn btn-primary">Play RPS
+                        Now!</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
     <script type="text/javascript" src="../Psychic-Game/assets/javascript/game.js"></script>
 
