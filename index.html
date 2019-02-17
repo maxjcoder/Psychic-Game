@@ -26,65 +26,34 @@
                 <p>Your Guesses So Far:</p>
                 <hr>
             </div>
+            <div>
+                <button onclick="location.reload();">Refresh Page</button>
+            </div>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Visit my portfolio</h5>
+              <p class="card-text">My name is Max Jackson and I am a web developer in the making</p>
+              <a href="https://maxjcoder.github.io/Basic-Portfolio/"  title="Max Jackson's Web Dev. Portfolio" target="_blank" class="btn btn-primary">Portfolio</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Would you like to play a different game?</h5>
+              <p class="card-text">You might enjoy Rock, Paper, Scissors...</p>
+              <a href="https://maxjcoder.github.io/Rock-Paper-Scissors/" class="btn btn-primary">Play RPS Now!</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!--    1. beginning of game: W-L-G = 0-0-9
-            2. user clicks a letter on keyboard.
-            3. (incorrect guess) / log keystroke and decrease "Guesses" by 1.
-            4. after 9/ if no correct guesses, then increase "Losses" by 1, and log "guesses" as zero and reset the game (Guesses Left: 9).
-            5. computer needs to pick a new letter.
-            6. (correct guess) / erase keystrokes and increase "Wins" by 1, and log "guesses" as nine, and reset
-            the game (Guesses Left:9).
- -->
-
-    <script type="text/javascript">
-
-        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-        var wins = 0;
-        var losses = 0;
-        var left = 9;
-        var guesses = [];
-
-        document.onkeyup = function (event) {
-
-            var userGuess = event.key;
-            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-
-            if (options.indexOf(userGuess) > -1) {
-                if (userGuess === computerGuess) {
-                    wins++;
-                    left = 9;
-                    guesses = [];
-                }
-                if (userGuess != computerGuess) {
-                    left--;
-                    guesses.push(userGuess);
-                }
-                if (left === 0) {
-                    left = 9;
-                    losses++;
-                    guesses = [];
-                }
-
-                var html =
-                    "<h1> The Psychic Game </h1>" +
-                    "<hr>" +
-                    "<p>Guess what letter I am thinking of!</p>" +
-                    "<hr>" +
-                    "<p>Wins: " + wins + "</p>" +
-                    "<p>Losses: " + losses + "</p>" +
-                    "<p>Guesses Left: " + left + "</p>" +
-                    "<p>Your Guesses so far: " + guesses.join(", ") + "</p>" +
-                    "<hr>";
-                    
-                document.querySelector("#game").innerHTML = html;
-            }
-        };
-
-    </script>
+    <script type="text/javascript" src="../Psychic-Game/assets/javascript/game.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
